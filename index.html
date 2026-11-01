@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Валютний інформер — лабораторна робота 19</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header><h1>Валютний інформер</h1><p>Офіційні курси Національного банку України</p></header>
+    <div class="layout">
+      <section class="panel left-panel" aria-labelledby="current-date-title">
+        <h2 id="current-date-title">Курс валют на <span id="current-date"></span></h2>
+        <p id="status" role="status">Завантаження курсів валют...</p>
+        <ul class="currency-list" id="currency-list"><li class="currency-item">Завантаження...</li></ul>
+      </section>
+      <section class="panel right-panel" aria-labelledby="converter-title">
+        <h2 id="converter-title">Конвертер</h2>
+        <div class="converter-block">
+          <h3>Іноземна валюта → гривні</h3>
+          <label for="amount-foreign">Сума в іноземній валюті</label>
+          <input type="number" id="amount-foreign" min="0" step="any" placeholder="Наприклад, 100">
+          <label for="currency-input">Код валюти</label>
+          <input list="currency-select" id="currency-input" placeholder="Наприклад, USD" autocomplete="off">
+          <datalist id="currency-select"></datalist>
+          <label for="amount-uah">Результат у гривнях (UAH)</label>
+          <input type="text" id="amount-uah" readonly placeholder="—">
+        </div>
+        <div class="converter-block">
+          <h3>Гривні → іноземна валюта</h3>
+          <label for="amount-uah-source">Сума у гривнях (UAH)</label>
+          <input type="number" id="amount-uah-source" min="0" step="any" placeholder="Наприклад, 1000">
+          <label for="currency-input-reverse">Код валюти</label>
+          <input list="currency-select-reverse" id="currency-input-reverse" placeholder="Наприклад, EUR" autocomplete="off">
+          <datalist id="currency-select-reverse"></datalist>
+          <label for="amount-foreign-result">Результат в іноземній валюті</label>
+          <input type="text" id="amount-foreign-result" readonly placeholder="—">
+        </div>
+        <p class="hint">Розрахунки за офіційним курсом НБУ. Курс купівлі та продажу в банках може відрізнятися.</p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
